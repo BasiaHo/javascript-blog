@@ -82,3 +82,4 @@ generateTitleLinks();
 function clearMessages(element) {
     element.innerHTML = '';
 }
+        
