@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
 
 /* Variables */
 
 $color-light: #fff;
 $color-dark: #444;
 
-$font-logo: 'Sacramento', cursive;
-$font-header: 'Oswald', sans-serif;
-$font-text: 'Source Sans Pro', sans-serif;
+$font-logo: "Sacramento", cursive;
+$font-header: "Oswald", sans-serif;
+$font-text: "Source Sans Pro", sans-serif;
 
 /* Global */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -57,7 +59,8 @@ body {
   flex: 2 0 0;
 }
 
-.sidebar, .posts {
+.sidebar,
+.posts {
   background: $color-light;
   margin-right: 10px;
   padding: 40px;
@@ -104,7 +107,6 @@ body {
 /* Post */
 
 .post {
-
   display: none;
 
   &.active {
@@ -128,5 +130,43 @@ body {
       margin-right: 5px;
     }
   }
+}
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 150px;
+
+  li {
+    display: inline;
+
+    .tag-size-1 {
+      display: inline;
+      font-size: 20px;
+      color: orchid;
+      padding: 0.125rem 0.25rem;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .tag-size-5 {
+      display: inline;
+      font-size: 30px;
+      color: blueviolet;
+      padding: 0.125rem 0.25rem;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .tag-size-3 {
+      display: inline;
+      font-size: 25px;
+      color: blue;
+      padding: 0.125rem 0.25rem;
+      text-decoration: none;
+      position: relative;
+    }
+  }
 }
