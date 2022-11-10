@@ -255,7 +255,7 @@ addClickListenersToTags();
 /*Adding an author to the article */
 
 function generateAuthors() {
-  const allAuthors = [];
+  const allAuthors = {};
   const allAuthorsData = { authors: [] };
 
   /* find all articles */
@@ -281,16 +281,18 @@ function generateAuthors() {
     authorWrapper.innerHTML = linkAuthorHTML;
 
     /* [NEW] check if this link is NOT already in allAuthors */
-    if (allAuthors.indexOf(articleAuthor) == -1) {
-      /* [NEW] add generated code to allAuthors array */
-      allAuthors.push(articleAuthor);
+    if (!allAuthors.hasOwnProperty(articleAuthor)) {
+      allAuthors[articleAuthor] = 1;
+    } else {
+      allAuthors[articleAuthor]++;
     }
   }
 
-  for (let author of allAuthors) {
+  for (let author in allAuthors) {
     /* generate HTML of the link */
     allAuthorsData.authors.push({
       author,
+      count: allAuthors[author],
     });
   }
 
